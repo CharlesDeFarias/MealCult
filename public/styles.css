@@ -1,0 +1,50 @@
+.wrapper{
+  padding: 10%;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+}
+ul{
+  list-style: none;
+}
+.innerWrap{
+  background: rgba(0, 0, 0, 0.8);
+}
+.index.h1{
+  /* I want this to be centered, bold, big and closer to the top than it currently is. This is the headline that says click links below for free food */
+}
+.index.sites{
+  /* ul with sites */
+}
+.index.site{
+  /* li with site details */
+}
+.site>span{
+  /* span fields in sites li */
+}
+.fa-thumbs-up, .fa-thumbs-up{
+
+}
+.index.reviews{
+  /* ul with reviews */
+}
+.index.review{
+  /* li with reviews details */
+}
+.review>span{
+  /* span fields in reviews li */
+}
+body{
+  width: 80%;
+  margin: auto;
+  background: url('https://i2.wp.com/stilettosontheglassceiling.com/sotgc/wp-content/uploads/2015/05/endless-food.jpg?ssl=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+h3{
+  margin-top: 40px;
+}

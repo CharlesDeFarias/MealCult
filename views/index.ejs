@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MealCult</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class='wrapper'>
+  <section class='innerWrap'>
+  <h1 class="index h1">Click any of the links below to get free food!</h1>
+  <h3>Links</h3>
+  <ul class="index sites">
+  <% for(var i=0; i<sites.length; i++) {%>
+    <li class="index site">
+      <span><%= sites[i].name %></span>
+      <span><%= sites[i].url %></span>
+      <span><%= sites[i].promo %></span>
+      <span><%= sites[i].siteUp %></span>
+      <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+      <span><%= sites[i].siteDown %></span>
+      <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+    </li>
+  <% } %>
+  </ul>
+  <h2>Add a review</h2>
+  <ul class="index reviews">
+  <% for(var j=0; j<reviews.length; j++) {%>
+    <li class="index review">
+      <span><%= reviews[j].name %></span>
+      <span><%= reviews[j].site %></span>
+      <span><%= reviews[j].restaurant %></span>
+      <span><%= reviews[j].review %></span>
+    </li>
+  <% } %>
+  </ul>
+    <form action="/reviews" method="POST">
+      <input type="text" placeholder="Name" name="name">
+      <input type="text" placeholder="Site name" name="site">
+      <input type="text" placeholder="restaurant" name="restaurant">
+      <input type="text" placeholder="Your review" name="review">
+      <button type="submit">Submit</button>
+    </form>
+  <script src="main.js"></script>
+</section>
+</section>
+</body>
+</html>

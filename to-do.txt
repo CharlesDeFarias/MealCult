@@ -1,0 +1,3 @@
+----index.ejs
+--Tagged first span of index site li (li that has sites info) so that there's an a tag around the span with link being set to sites[i].url
+--Option for making review input field have automatic loading of person's name and have pre-set options for possible sites to choose from?
