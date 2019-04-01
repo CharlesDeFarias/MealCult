@@ -22,6 +22,7 @@ app.listen(3000, () => {
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
@@ -39,7 +40,6 @@ app.post('/reviews', (req, res) => {
     if (err) return console.log(err)
     res.redirect('/')
   })
-  console.log(req.body)
 })
 
 app.put('/siteUp', (req, res) => {
