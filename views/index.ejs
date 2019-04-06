@@ -15,7 +15,7 @@
   <ul class="index sites">
   <% for(var i=0; i<sites.length; i++) {%>
     <li class="index site">
-      <span><%= sites[i].name %></span>
+      <span><%= sites[i].site %></span>
       <span><%= sites[i].url %></span>
       <span><%= sites[i].promo %></span>
       <span><%= sites[i].siteUp %></span>
@@ -23,26 +23,24 @@
       <span><%= sites[i].siteDown %></span>
       <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
     </li>
-  <% } %>
   </ul>
-  <h2>Add a review</h2>
+  <h4>reviews</h4>
   <ul class="index reviews">
-  <% for(var j=0; j<reviews.length; j++) {%>
+  <% for(var j=0; j<sites[i].reviews.length; j++) {%>
     <li class="index review">
-      <span><%= reviews[j].name %></span>
-      <span><%= reviews[j].site %></span>
-      <span><%= reviews[j].restaurant %></span>
-      <span><%= reviews[j].review %></span>
+      <span><%= sites[i].reviews[j].name %></span>
+      <span><%= sites[i].reviews[j].restaurant %></span>
+      <span><%= sites[i].reviews[j].review %></span>
     </li>
-  <% } %>
   </ul>
-    <form action="/reviews" method="POST">
-      <input type="text" placeholder="Name" name="name">
-      <input type="text" placeholder="Site name" name="site">
-      <input type="text" placeholder="restaurant" name="restaurant">
+  <% } %>
+  <% } %>
+  <h2>Add a review</h2>
+      <input type="text" placeholder="Your name" name="name">
+      <input type="text" name="site" placeholder="Site you used">
+      <input type="text" placeholder="Restaurant you ordered from" name="restaurant">
       <input type="text" placeholder="Your review" name="review">
-      <button type="submit">Submit</button>
-    </form>
+      <button id="submit">Submit</button>
   <script src="main.js"></script>
 </section>
 </section>

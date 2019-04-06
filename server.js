@@ -1,7 +1,7 @@
-const express = require('express'),
-app = express(),
-bodyParser = require('body-parser'),
-MongoClient = require('mongodb').MongoClient;
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const MongoClient = require('mongodb').MongoClient;
 
 var db;
 var collection;
@@ -9,13 +9,13 @@ var collection;
 const url = "mongodb+srv://Charles:Charles123@cluster0-o53eh.mongodb.net/test?retryWrites=true";
 const dbName = "MealCult";
 
+
 app.listen(3000, () => {
     MongoClient.connect(url, (error, client) => {
         if(error) {
             throw error;
-            console.log('mangofuck')
+            console.log('rotten mango')
         }
-        db = client.db(dbName);
         console.log("Connected to `" + dbName + "`!");
     });
 });
@@ -35,10 +35,21 @@ app.get('/', (req, res) => {
   })
 })
 
-app.post('/reviews', (req, res) => {
-  db.collection('reviews').save({name: req.body.name, site: req.body.site, restaurant: req.body.restaurant, review:req.body.review}, (err, result) => {
-    if (err) return console.log(err)
-    res.redirect('/')
+app.put('/reviews', (req, res) => {
+  db.collection('sites').findOneAndUpdate({site: req.body.site}, {
+  $push: {
+    reviews: {
+      "name": req.body.name,
+      "restaurant": req.body.restaurant,
+      "review": req.body.review
+    }
+  }
+  }, {
+  sort: {_id: -1},
+  upsert: false
+  }, (err, result) => {
+    if (err) return res.send(err)
+    res.send(result)
   })
 })
 
